@@ -1,6 +1,5 @@
 ﻿// Esercizi di ricorsione
 
-
 // Esercizi BASE
 /*Conteggio regressivo: scrivi una funzione ricorsiva ConteggioRegressivo(int n) che stampi i numeri da n a 1.*/
 void ConteggioRegressivo(int n)
@@ -27,8 +26,6 @@ int ContaCifre(int n)
 {
     return n == 0 ? 0 : 1 + ContaCifre(n / 10);
 }
-
-
 
 // Esercizi INTERMEDI
 /*Inversione di una stringa: scrivi una funzione ricorsiva InvertiStringa(string s) che inverta una stringa.*/
@@ -61,7 +58,34 @@ int MCD(int a, int b)
 }
 
 
+// Esercizi AVANZATI
+/*Stampa tutte le permutazioni: scrivi una funzione ricorsiva che stampi tutte le permutazioni di una stringa.*/
+// string Permutazioni(string s, string ris)
 
+/*Subset Sum (Somma di sottoinsieme): dato un array di interi e un target, scrivi una funzione ricorsiva 
+che determini se esiste un sottoinsieme dell'array la cui somma è uguale al target.*/
+// bool SubsetSum(int[] arr, int target)
+
+
+/*Torre di Hanoi: risolvi il classico problema della Torre di Hanoi
+Scrivi una funzione Hanoi(int n, string daPiolo, string aPiolo, string appoggioPiolo) che stampi le mosse necessarie.*/
+// int Hanoi(int n, string daPiolo, string aPiolo, string appoggioPiolo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Chiamate delle funzioni...
 ConteggioRegressivo(6);
 Console.WriteLine("Somma dei primi 3 numeri naturali: " + SommaN(3));
 Console.WriteLine(Potenza(3, 3));
