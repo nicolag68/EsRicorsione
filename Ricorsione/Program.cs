@@ -37,6 +37,15 @@ int ContaCifre(int n)
     return 1 + ContaCifre(n / 10);
 }
 
+string InvertiStringa(string s)
+{
+    if (s.Length <= 1) return s;
+
+    return s[^1] + InvertiStringa(s[..^1]);
+}
+
+
+
 ConteggioRegressivo(6);
 Console.WriteLine("Somma dei primi 3 numeri naturali: " + SommaN(3));
 Console.WriteLine(Potenza(3, 3));
