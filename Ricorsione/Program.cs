@@ -65,11 +65,26 @@ int MCD(int a, int b)
 /*Subset Sum (Somma di sottoinsieme): dato un array di interi e un target, scrivi una funzione ricorsiva 
 che determini se esiste un sottoinsieme dell'array la cui somma è uguale al target.*/
 // bool SubsetSum(int[] arr, int target)
+bool SubsetSum(int[] arr, int target, int i = 0)
+{
+    if (target == 0) return true;
+    if (i == arr.Length) return false;
+
+    return HasSubsetSum(arr, target - arr[i], i + 1) // includi
+        || HasSubsetSum(arr, target, i + 1);          // escludi
+}
 
 
 /*Torre di Hanoi: risolvi il classico problema della Torre di Hanoi
 Scrivi una funzione Hanoi(int n, string daPiolo, string aPiolo, string appoggioPiolo) che stampi le mosse necessarie.*/
-// int Hanoi(int n, string daPiolo, string aPiolo, string appoggioPiolo)
+void Hanoi(int n, string daPiolo, string aPiolo, string appoggioPiolo)
+{
+    if (n == 0) return;
+
+    Hanoi(n - 1, daPiolo, appoggioPiolo, aPiolo);
+    Console.WriteLine($"Sposta disco {n} da {daPiolo} a {aPiolo}");
+    Hanoi(n - 1, appoggioPiolo, aPiolo, daPiolo);
+}
 
 
 
@@ -93,3 +108,4 @@ Console.WriteLine(ContaCifre(-123));
 Console.WriteLine(InvertiStringa("Ciao"));
 Console.WriteLine(IsPalindromo("cocco"));
 Console.WriteLine(MCD(18, 48));
+Hanoi(3, "Rosso", "Verde", "Blu");
